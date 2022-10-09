@@ -21,7 +21,7 @@ public class CustomerManager extends BaseCreditManager{
     public void AlltypeofCustomer(){
         _ıcreditmanager.Calculate();
     }
-
+    public void CustomSave(){_ıcreditmanager.Save();}
     @Override
     public void Calculate() {
 

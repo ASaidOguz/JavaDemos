@@ -27,7 +27,7 @@ public class Main {
         CustomerManager customerManager=new CustomerManager(new Customer(),new MilitaryCreditManager());
 
         customerManager.AlltypeofCustomer();
-        customerManager.Save();
+        customerManager.CustomSave();
 
 
 
