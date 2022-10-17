@@ -6,6 +6,7 @@ import core.logging.DataBaseLogger;
 import core.logging.FileLogger;
 import core.logging.ILogger;
 import core.logging.MailLogger;
+import dataAccess.HibernateCourseDao;
 import dataAccess.JbdcCategoryDao;
 import dataAccess.JbdcCourseDao;
 import dataAccess.JbdcTeacherDao;
@@ -17,7 +18,7 @@ public class Main {
         ILogger[]loggers={new DataBaseLogger(),new FileLogger(),new MailLogger()};
         IManager[]managers={
                 new CategoryManager(new JbdcCategoryDao(), List.of(loggers)),
-                new CourseManager(new JbdcCourseDao(), List.of(loggers)),
+                new CourseManager(new HibernateCourseDao(), List.of(loggers)),
                 new TeacherManager(new JbdcTeacherDao(), List.of(loggers))
         };
 
@@ -53,6 +54,7 @@ public class Main {
        for (IManager manager:managers){
            manager.add(course);
            manager.add(course1);
+           manager.add(course2);
        }
     }
 }
